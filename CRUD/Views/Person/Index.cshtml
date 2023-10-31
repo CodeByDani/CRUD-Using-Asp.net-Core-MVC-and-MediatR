@@ -1,0 +1,32 @@
+﻿@model List<CRUD.Models.Domain.Person>
+@{
+}
+
+<h1>List Of Persons</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>FirstName</td>
+        <td>LastName</td>
+        <td>Email</td>
+        <td>PhoneNumber</td>
+        <td>DateOFBirth</td>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+        {
+            <tr>
+                <td>@person.Id</td>
+                <td>@person.FirstName</td>
+                <td>@person.LastName</td>
+                <td>@person.Email</td>
+                <td>@person.PhoneNumber</td>
+                <td>@person.DateOFBirth.ToString("dd-MM-yyyy")</td>
+                <td><a href="Person/View/@person.Id">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
